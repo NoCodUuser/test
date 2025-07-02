@@ -24,13 +24,13 @@ int main()
 
         if(index_x < 0 || index_x > 2 || index_y < 0 || index_y > 2)
         {
-            std::cout << "Player " << current_player << ", you are imbecile: cell index must be between 0 and 2" << std::endl << std::endl;
+            std::cout << "Player " << current_player << ", you are imbecile: your shit must be between 0 and 2" << std::endl << std::endl;
             continue;
         }
 
         if(field[index_x][index_y] != 0)
         {
-            std::cout << "Player " << current_player << ", you are imbecile: cell is already occupied" << std::endl << std::endl;
+            std::cout << "Player " << current_player << ", you are imbecile: this shit is already occupied" << std::endl << std::endl;
             continue;
         }
 
