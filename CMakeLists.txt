@@ -11,7 +11,7 @@ if(MSVC)
     add_compile_options(/bigobj)
 endif(MSVC)
 
-add_executable(TickTackToe ${Sources} Main.cpp)
+add_executable(TickTackToe ${Sources})
 
 target_include_directories(TickTackToe PUBLIC
                             "${PROJECT_SOURCE_DIR}"
