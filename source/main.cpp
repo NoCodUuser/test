@@ -6,6 +6,7 @@ int main()
     int field[3][3];
 
     reset_field(field);
+    print_field(field);
 
     int coordinate_x = 0;
     int coordinate_y = 0;
@@ -16,14 +17,19 @@ int main()
     {
         std::cout << "player " << current_player << " Enter 2 numbers separated by a space: ";
         std::cin >> coordinate_x >> coordinate_y;
+        std::cout << std::endl;
 
         field[coordinate_x][coordinate_y] = current_player;
 
         print_field(field);
 
         switch_player(current_player);
-    }
 
+        if(should_break(field))
+        {
+            break;
+        }
+    }
     return 0;
 }
 

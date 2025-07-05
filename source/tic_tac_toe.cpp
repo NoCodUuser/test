@@ -14,14 +14,15 @@ void reset_field(int field[3][3])
 
 void print_field(int field[3][3])
 {
-    for(int i = 0; i < 3; ++i)
+    for(int y = 2; y > -1; --y)
     {
-        for(int i2 = 0; i2 < 3; ++i2)
+        for(int x = 0; x < 3; ++x)
         {
-            std::cout << field[i][i2];
+            std::cout << field[x][y] << " ";
         }
         std::cout << std::endl;
     }
+    std::cout << std::endl;
 }
 
 void switch_player(int& current_player)
@@ -35,3 +36,19 @@ void switch_player(int& current_player)
         current_player = 1;
     }
 }
+
+bool should_break(int field[3][3])
+{
+    for(int i = 0; i < 3; ++i)
+    {
+        for(int i2 = 0; i2 < 3; ++i2 )
+        {
+            if(field[i][i2] == 0)
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
