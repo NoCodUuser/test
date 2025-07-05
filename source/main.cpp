@@ -23,6 +23,12 @@ int main()
 
         print_field(field);
 
+        if(has_someone_won(field))
+        {
+            std::cout << "player " << current_player << ", you win" << std::endl;
+            break;
+        }
+
         switch_player(current_player);
 
         if(should_break(field))
