@@ -14,15 +14,37 @@ void reset_field(int field[3][3])
 
 void print_field(int field[3][3])
 {
-    for(int y = 2; y > -1; --y)
+    for(int y = 2; y > 0; --y)
     {
-        for(int x = 0; x < 3; ++x)
+        for(int x = 0; x < 2; ++x)
         {
-            std::cout << field[x][y] << " ";
+            std::cout << " " << convert_field_element(field[x][y]) << " " << "|";
         }
-        std::cout << std::endl;
+        std::cout  << " " << convert_field_element(field[2][y]) << std::endl;
+        std::cout << "---+---+---" << std::endl;
     }
+    for(int x = 0; x < 2; ++x)
+    {
+        std::cout << " " << convert_field_element(field[x][0]) << " " << "|";
+    }
+    std::cout  << " " << convert_field_element(field[2][0]) << std::endl;
     std::cout << std::endl;
+}
+
+char convert_field_element(int cell)
+{
+    if(cell == 0)
+    {
+        return ' ';
+    }
+    else if(cell == 1)
+    {
+        return 'x';
+    }
+    else
+    {
+        return 'o';
+    }
 }
 
 void switch_player(int& current_player)
@@ -98,3 +120,4 @@ bool has_someone_won(int field[3][3])
     }
     return false;
 }
+

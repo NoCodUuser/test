@@ -19,7 +19,15 @@ int main()
         std::cin >> coordinate_x >> coordinate_y;
         std::cout << std::endl;
 
-        field[coordinate_x][coordinate_y] = current_player;
+        if(field[coordinate_x][coordinate_y] == 0)
+        {
+           field[coordinate_x][coordinate_y] = current_player;
+        }
+        else
+        {
+            std::cout << "cell is occupied. choose another" << std::endl << std::endl;
+            continue;
+        }
 
         print_field(field);
 
