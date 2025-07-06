@@ -31,6 +31,26 @@ void print_field(int field[3][3])
     std::cout << std::endl;
 }
 
+std::string error_message(int coordinate_x, int coordinate_y, int field[3][3])
+{
+    if(!(coordinate_x >= 0 && coordinate_x <= 2))
+    {
+        return "you entered wrong coordinate";
+    }
+    else if(!(coordinate_y >= 0 && coordinate_y <= 2))
+    {
+        return "you entered wrong coordinate";
+    }
+    else if(field[coordinate_x][coordinate_y] != 0)
+    {
+        return "cell is occupied. choose another";
+    }
+    else
+    {
+        return "";
+    }
+}
+
 char convert_field_element(int cell)
 {
     if(cell == 0)

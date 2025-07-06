@@ -1,3 +1,5 @@
+#include <string>
+
 void reset_field(int field[3][3]);
 
 void print_field(int field[3][3]);
@@ -11,3 +13,5 @@ bool is_line_winning(int cell_0, int cell_1, int cell_2);
 bool has_someone_won(int field[3][3]);
 
 char convert_field_element(int cell);
+
+std::string error_message(int coordinate_x, int coordinate_y, int field[3][3]);
